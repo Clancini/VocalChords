@@ -22,7 +22,7 @@ namespace VocalCords
     internal class Player : ModPlayer
     {
 
-        //Colors of the quotes (text above the player). To add more just Copy and paste, change the name and the rgb value
+        //Colors of the quotes (text above the player). To add more just Copy and paste, change the name and the rgb value (you can use this -> https://www.w3schools.com/colors/colors_picker.asp)
         Random rnd = new Random();
 
         Color idle = new Color(255, 255, 255);
@@ -216,7 +216,7 @@ namespace VocalCords
             //This is what all the mod is based on
             //This can be expanded easily (probably) if you want longer quotes with more parts
    
-            if(Part1 != "" && quoteDelay == 0 && quoteCD == 0 && idleQuoteCD < 1800 && !isIdleQuote){       //If the plater can say a quote (you can define when this is the case, just change the if condition. In this case i all his CDs are 0 except for the idleQuote which could have been said 1800 frames ago)
+            if(Part1 != "" && quoteDelay == 0 && quoteCD == 0 && idleQuoteCD < 1800 && !isIdleQuote){       //If the player can say a quote (you can define when this is the case, just change the if condition. In this case i all his CDs are 0 except for the idleQuote which could have been said 1800 frames ago)
                 Main.combatText[CombatText.NewText(Player.Hitbox, current, Part1, false)].lifeTime = 120;   //This lets you customize the quote properties. (you probably want the first parameter as it is, the second parameter is the color, the third the quote part and the forth if you want bold)
                 quoteDelay = 120;   //you can change this to modify how much time passes (in frames) between parts
                 if(Part2 == ""){    //If the next part is empty, the quote is over, add cooldown as normal
